@@ -12,8 +12,14 @@ complete -c rustup -xn '__fish_use_subcommand' -a '$__fish_rustup_subcommands'
 complete -c rustup -xn '__fish_seen_subcommand_from help' -a '$__fish_rustup_subcommands'
 
 
-for sub in update default;
+for sub in update default run
   complete -c rustup -xn "__fish_seen_subcommand_from $sub" -a 'beta nightly stable'
 end
 
-complete -c rustup -xn "__fish_seen_subcommand_from toolchain" -a 'list install uninstall link help'
+complete -c rustup -xn "__fish_seen_subcommand_from toolchain"  -a 'list install uninstall link help'
+
+complete -c rustup -xn "__fish_seen_subcommand_from target"  -a 'list add remove help'
+
+complete -c rustup -xn "__fish_seen_subcommand_from override"  -a 'list set unset help'
+
+
